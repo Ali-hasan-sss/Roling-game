@@ -1,0 +1,74 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --bg-color: #ff3c3cc6;
+  --char-color: #fff;
+  --ops-color: #111;
+}
+.game-container{
+  background-color: var(--bg-color);
+  border: 5px solid var(--ops-color);
+  position: relative;
+  width: 360px;
+  height: 500px;
+  overflow: hidden;
+}
+.charakter{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 400px;
+  left: 120px;
+  background-color: var(--char-color);
+  z-index: 1000;
+}
+.block{
+  width: 100%;
+  height: 20px;
+  background-color: var(--ops-color);
+  position: absolute;
+  animation: moveDown 5s linear forwards;
+}
+.hole{
+  width: 70px;
+  height: 20px;
+  background-color: var(--bg-color);
+  position: absolute;
+  animation: moveDown 5s linear forwards;
+}
+.control{
+  width: 360px;
+  height: 200px;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+.control button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid var(--ops-color);
+  margin: 30px;
+  padding: 10px;
+  color: var(--char-color);
+  background: var(--bg-color);
+}
+.control button:hover{
+  background: #111;
+}
+@keyframes moveDown{
+  0%{
+    top: 0px;
+  }
+  100%{
+    top: 100%;
+    display: none;
+    visibility: hidden;
+  }
+}
